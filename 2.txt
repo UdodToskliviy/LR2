@@ -1,0 +1,21 @@
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Введите пароль для проверки на надёжность");
+
+        String password = scan.nextLine();
+
+        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}";
+
+        if(password.matches(pattern)){
+            System.out.println("Пароль надёжен");
+        }
+        else{
+            System.out.println("Пароль ненадёжен. Повторите ввод");
+        }
+    }
+}
